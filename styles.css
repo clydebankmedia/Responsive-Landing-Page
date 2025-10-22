@@ -1,68 +1,140 @@
-/* styles.css (starter – learner-edited file)
-------------------------------------------------------------------
-NOTE
-- This file is intentionally minimal.
-- Visual tokens, resets, and basic look & feel are defined in theme.css.
-- You will add layout, spacing, and responsive rules here during the steps.
------------------------------------------------------------------- */
+/* ==================================================================
+   HTML & CSS 08 – Responsive Landing Page
+   Final Combined Stylesheet (Steps 1–5)
+   ================================================================== */
+
+/* ==================================================================
+   Mobile-first Base (STEP 2)
+   ================================================================== */
+
+/* Header + Nav: stacked, centered, breathable spacing */
+header {
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;   /* stacked on mobile */
+  align-items: center;      /* centered horizontally */
+  padding: 1rem;            /* breathing room */
+}
+
+/* Vertical space between nav links (~0.5 rem) */
+.nav-links a {
+  margin: 0.5rem 0;
+}
+
+/* Hero: text above image, centered; side padding for small screens */
+.hero {
+  display: flex;
+  flex-direction: column;   /* text above image */
+  align-items: center;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: white;
+}
+
+/* Apply theme tokens explicitly called out */
+.hero-text {
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
 
 
-/* Base styles (mobile-first)
-------------------------------------------------------------------
-Add your default rules here (STEP 2).
-Suggested targets: header, nav, .nav-links, .hero, .hero-text, .hero-image
------------------------------------------------------------------- */
+/* ==================================================================
+   Readability & Rhythm (STEP 4)
+   ================================================================== */
+.hero-text {
+  max-width: 45rem;         /* within 40–50 rem guidance */
+  margin: 0 auto;           /* centered block */
+  line-height: 1.5;         /* body text ~1.5–1.6 */
+}
 
-header {}
+h2 {
+  line-height: 1.3;         /* compact but readable heading spacing */
+}
 
-nav {}
-
-.nav-links a {} /* OPTIONAL - customize link spacing or text style if desired */
-
-.hero {}
-
-.hero-text {}
-
-.hero-image {}
-
-
-/* Desktop breakpoint
-------------------------------------------------------------------
-Use this block for wider-screen adjustments (STEP 3).
-Do not create new @media blocks—add rules here.
------------------------------------------------------------------- */
+/* ==================================================================
+   Desktop Enhancements (STEP 3) @ 768 px
+   ================================================================== */
 @media (min-width: 768px) {
-  nav {}
+  /* Navigation: row layout with space between brand and links */
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  .nav-links a {} /* OPTIONAL - customize link spacing or text style if desired */
+  /* Links in a row with clear gap */
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
 
-  .hero {}
+  /* Accessible hit targets (~2.75 rem height) */
+  .nav-links a {
+    padding: 0.75rem 0.5rem;
+  }
 
-  .hero-text {}
+  /* Hero: side-by-side layout, text left, image centered */
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 3rem 2rem;           /* more breathing room on desktop */
+  }
 
-  .hero-image {}
+  /* Make 50/50 split explicit without shorthand */
+  .hero-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    padding-right: 2rem;          /* space between text and image */
+  }
+
+  .hero-image {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Keep image fluid but capped so it doesn’t balloon */
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: 30rem;
+  }
+
+  /* Slight desktop bump for heading size (beginner-friendly) */
+  h2 {
+    font-size: 1.75rem;
+  }
 }
 
+/* ==================================================================
+   STEP 5: Visual Depth and Micro-Interactions
+   ================================================================== */
 
-/* Optional: Tablet breakpoint (~600px)
-------------------------------------------------------------------
-If you want to experiment, uncomment and add rules here.
------------------------------------------------------------------- */
-@media (min-width: 600px) {
-  header {}
-
-  nav {}
-
-  .hero {}
+/* Hero section depth & rounding */
+.hero {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
 }
 
+/* Primary button hover & press effects */
+.btn-primary {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
-/* Optional: Extra-large breakpoint (~1280px)
-------------------------------------------------------------------
-If you want to experiment, uncomment and add rules here.
------------------------------------------------------------------- */
-@media (min-width: 1280px) {
-  .hero {}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
 
-  .hero-text {}
+.btn-primary:active {
+  transform: scale(0.98);
 }
