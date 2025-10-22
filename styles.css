@@ -1,0 +1,68 @@
+/* styles.css (starter – learner-edited file)
+------------------------------------------------------------------
+NOTE
+- This file is intentionally minimal.
+- Visual tokens, resets, and basic look & feel are defined in theme.css.
+- You will add layout, spacing, and responsive rules here during the steps.
+------------------------------------------------------------------ */
+
+
+/* Base styles (mobile-first)
+------------------------------------------------------------------
+Add your default rules here (STEP 2).
+Suggested targets: header, nav, .nav-links, .hero, .hero-text, .hero-image
+------------------------------------------------------------------ */
+
+header {}
+
+nav {}
+
+.nav-links a {} /* OPTIONAL - customize link spacing or text style if desired */
+
+.hero {}
+
+.hero-text {}
+
+.hero-image {}
+
+
+/* Desktop breakpoint
+------------------------------------------------------------------
+Use this block for wider-screen adjustments (STEP 3).
+Do not create new @media blocks—add rules here.
+------------------------------------------------------------------ */
+@media (min-width: 768px) {
+  nav {}
+
+  .nav-links a {} /* OPTIONAL - customize link spacing or text style if desired */
+
+  .hero {}
+
+  .hero-text {}
+
+  .hero-image {}
+}
+
+
+/* Optional: Tablet breakpoint (~600px)
+------------------------------------------------------------------
+If you want to experiment, uncomment and add rules here.
+------------------------------------------------------------------ */
+@media (min-width: 600px) {
+  header {}
+
+  nav {}
+
+  .hero {}
+}
+
+
+/* Optional: Extra-large breakpoint (~1280px)
+------------------------------------------------------------------
+If you want to experiment, uncomment and add rules here.
+------------------------------------------------------------------ */
+@media (min-width: 1280px) {
+  .hero {}
+
+  .hero-text {}
+}
